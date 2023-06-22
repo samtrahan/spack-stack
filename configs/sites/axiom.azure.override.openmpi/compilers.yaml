@@ -1,0 +1,14 @@
+compilers:
+- compiler:
+    spec: intel@2021.6.0
+    paths:
+      cc: /lustre/opt/intel/2022.2/override/icc
+      cxx: /lustre/opt/intel/2022.2/override/icpc
+      f77: /lustre/opt/intel/2022.2/override/ifort
+      fc: /lustre/opt/intel/2022.2/override/ifort
+    flags: {}
+    operating_system: ubuntu20.04
+    target: x86_64
+    modules: [intel/2022.2-override]
+    environment: {}
+    extra_rpaths: []

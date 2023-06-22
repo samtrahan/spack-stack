@@ -1,0 +1,74 @@
+spack:
+  config:
+    install_tree:
+      root: $env/install
+    deprecated: true
+  modules:
+    default:
+      roots:
+        lmod: $env/install/modulefiles
+        tcl: $env/install/modulefiles
+      lmod:
+        projections:
+          parallelio: 'pio/{version}'
+          wrf-io: 'wrf_io/{version}'
+          gsi-ncdiag: 'ncdiag/{version}'
+      tcl: 
+        projections:
+          parallelio: '{^mpi.name}/{^mpi.version}/{compiler.name}/{compiler.version}/pio/{version}'
+          wrf-io: '{^mpi.name}/{^mpi.version}/{compiler.name}/{compiler.version}/wrf_io/{version}'
+          gsi-ncdiag: '{^mpi.name}/{^mpi.version}/{compiler.name}/{compiler.version}/ncdiag/{version}'
+
+  view: false
+  include:
+  - site
+  concretizer:
+    unify: true
+
+  specs:
+  - grib-util@1.2.3
+  - jasper@2.0.25
+  - zlib@1.2.11
+  - libpng@1.6.37
+  - hdf5@1.10.6
+  - netcdf-c@4.7.4
+  - netcdf-fortran@4.5.4
+  - parallelio@2.5.7
+  - esmf@8.3.0b09
+  - fms@2022.04
+  - bufr@11.7.0
+  - bacio@2.4.1
+  - crtm@2.4.0
+  - g2@3.4.5
+  - g2tmpl@1.10.2
+  - g2c@1.6.4
+  - ip@3.3.3
+  - sp@2.3.3
+  - w3nco@2.4.1
+  - gftl-shared@1.5.0
+  - gfsio@1.4.1
+  - yafyaml@0.5.1
+  - mapl@2.22.0
+  - nemsio@2.5.4
+  - sfcio@1.4.1
+  - sigio@2.3.2
+  - w3emc@2.9.2
+  - wgrib2@2.0.8
+  - wrf-io@1.2.0
+  - met@10.1.0
+  - metplus@4.1.0
+  - landsfcutil@2.4.1
+  - nemsiogfs@2.5.3
+  - prod-util@1.2.2
+  - gsl@2.7.1
+  - udunits@2.2.28
+  - nco@4.7.9
+  - ncio@1.1.2
+  - gsi-ncdiag@1.0.0
+  - nccmp@1.9.0.1
+  - libszip@2.1.1
+  - cdo@1.9.10
+  - zstd@1.5.2
+  - nccmp@1.9.0.1
+  - miniconda3@4.10.3
+  - netlib-lapack@3.10.1
